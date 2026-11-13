@@ -1,0 +1,321 @@
+/* ===========================
+   PALETA DE CORES
+=========================== */
+
+:root {
+    --cor-fundo: #12091C;
+    --cor-principal: #21102F;
+    --cor-secundaria: #351747;
+
+    --cor-destaque: #E85AAD;
+    --cor-roxo: #A855F7;
+
+    --cor-texto: #FFF0FA;
+}
+
+
+/* ===========================
+   CONFIGURAÇÕES GERAIS
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: linear-gradient(
+        135deg,
+        #12091C,
+        #1D0C2B,
+        #12091C
+    );
+
+    color: var(--cor-texto);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ===========================
+   CAIXA PRINCIPAL
+=========================== */
+
+.caixa-principal {
+    background: linear-gradient(
+        145deg,
+        #21102F,
+        #29123A
+    );
+
+    width: 90%;
+    max-width: 700px;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    border: 2px solid rgba(232, 90, 173, 0.35);
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.15),
+        0 0 45px rgba(232, 90, 173, 0.08);
+
+    animation: aparecer 0.6s ease;
+}
+
+
+/* ===========================
+   TÍTULO
+=========================== */
+
+h1 {
+    background: linear-gradient(
+        90deg,
+        var(--cor-roxo),
+        var(--cor-destaque)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 30px;
+
+    font-size: 2rem;
+}
+
+
+/* ===========================
+   TELA INICIAL
+=========================== */
+
+.tela-inicial {
+    display: block;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+.tela-inicial p {
+    margin-bottom: 30px;
+}
+
+
+/* ===========================
+   CONTROLE DE VISIBILIDADE
+=========================== */
+
+.caixa-perguntas,
+.caixa-alternativas {
+    display: none;
+}
+
+.caixa-perguntas.mostrar {
+    display: block;
+}
+
+.caixa-alternativas.mostrar {
+    display: flex;
+}
+
+.caixa-resultado {
+    display: none;
+}
+
+.caixa-resultado.mostrar {
+    display: block;
+}
+
+
+/* ===========================
+   PERGUNTAS
+=========================== */
+
+.caixa-perguntas {
+    font-size: 1.2rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* ===========================
+   ALTERNATIVAS
+=========================== */
+
+.caixa-alternativas {
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+button {
+    background-color: var(--cor-secundaria);
+
+    color: var(--cor-texto);
+
+    border: 2px solid transparent;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition: all 0.3s ease;
+}
+
+
+button:hover {
+    background: linear-gradient(
+        90deg,
+        var(--cor-roxo),
+        var(--cor-destaque)
+    );
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 15px rgba(232, 90, 173, 0.35);
+
+    border-color: var(--cor-destaque);
+}
+
+
+/* ===========================
+   BOTÃO INICIAR
+=========================== */
+
+.iniciar-btn {
+    background: linear-gradient(
+        90deg,
+        var(--cor-roxo),
+        var(--cor-destaque)
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    min-width: 150px;
+}
+
+
+/* ===========================
+   RESULTADO
+=========================== */
+
+.caixa-resultado {
+    margin-top: 30px;
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+
+    animation: aparecer 0.6s ease;
+}
+
+
+.texto-resultado {
+    color: var(--cor-texto);
+}
+
+
+/* ===========================
+   JOGAR NOVAMENTE
+=========================== */
+
+.novamente-btn {
+    margin-top: 20px;
+
+    background: linear-gradient(
+        90deg,
+        var(--cor-roxo),
+        var(--cor-destaque)
+    );
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* ===========================
+   ANIMAÇÃO
+=========================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .caixa-principal {
+        width: 100%;
+
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .caixa-perguntas {
+        font-size: 1rem;
+    }
+
+    .tela-inicial {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+
+        padding: 14px;
+    }
+
+}
